@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>repl.it</title>
-    <link href="main.css" rel="stylesheet" type="text/css" />
+    <link href="index.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded" rel="stylesheet">
     <script
           src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -16,24 +16,24 @@
     
     <header role='banner' class='container'>
       <div class='heading'>
-        <h1>Enter a SUPERHERO:</h1>
-        
+        <h1>Enter a Marvel Character Name:</h1>
         <form action='#' class='search-form'>
           <label for='user-input'></label>
           <input type='text' class='user-input' id='user-input' size='20'>
           <button type='submit'>Search</button>
         </form>
-        
       </div>
     </header>
     
-    <main role='main' class='main results' aria-live='assertive' hidden>
-      <div class='results-section'></div>
+    <main role='main'>
+      <section class='main results-section' aria-live='assertive' hidden></section>
+      <section class='main comics-section' aria-live='assertive' hidden></section>
+      <section class='main events-section' aria-live='assertive' hidden></section>
+      <aside class='main videos-section' aria-live='assertive' hidden></aside>
     </main>
     
-    <main role='main' class='main videos-section' aria-live='assertive' hidden>
-      <div class='videos'></div>
-    </main>
+    <section class='light-box-area' aria-live='assertive' hidden>
+    </section>
     
     <script src="index.js"></script>
   </body>

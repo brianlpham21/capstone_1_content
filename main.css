@@ -4,6 +4,8 @@
   font-family: 'Encode Sans Expanded', Helvetica, Sans-Serif;
 }
 
+/* SEARCH BAR STYLING */
+
 .container {
   background-color: #0C2340;
   color: white;
@@ -35,10 +37,11 @@ button {
   vertical-align: top;
 }
 
-.section-header {
-  padding-top: 40px;
-  padding-bottom: 20px;
+button:hover {
+  cursor: pointer;
 }
+
+/* RESULTS STYLING */
 
 .main {
   margin: 20px auto 0 auto;
@@ -50,10 +53,61 @@ img {
   width: 100%;
 }
 
-input.user-input:focus {
-  outline: 3px dashed salmon;
+.results-section {
+  border: 2px solid lightGrey;
 }
 
-button:hover {
+.comics-section {
+  border: 2px solid lightGrey;
+}
+
+.events-section {
+  border: 2px solid lightGrey;
+}
+
+.videos-section {
+  border: 2px solid lightGrey;
+}
+
+.videos-section .result {
+  border: 1px solid lightGrey;
+}
+
+/* VIDEO LIGHT BOX STYLING */
+
+#light-box {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+}
+
+#light-box iframe {
+  max-width: 60%;
+  max-height: 60%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.close-button {
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 5px;
+  position: relative;
+  top: 60px;
+  left: 40px;
+  color: white;
+}
+
+.close-button:hover {
+  background-color: #FFB81C;
   cursor: pointer;
+  color: black;
+  font-weight: bold;
 }
