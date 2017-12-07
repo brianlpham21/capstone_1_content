@@ -1,113 +1,84 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  font-family: 'Encode Sans Expanded', Helvetica, Sans-Serif;
+  padding: 0;
 }
 
-/* SEARCH BAR STYLING */
-
-.container {
-  background-color: #0C2340;
-  color: white;
+body {
+  background: url('http://art.cafimg.com/images/Category_120629/subcat_182493/EnSG7eJa_0105171442471gpadd.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center
 }
 
-.heading, .main {
+/* Top Bar Styling */
+
+nav {
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+}
+
+#nav-container {
   max-width: 1000px;
   margin: auto;
-  text-align: center;
 }
 
-.heading h1 {
-  padding: 20px 0;
+#top-container {
+  display: inline;
 }
 
-.heading form  {
-  padding-bottom: 20px;
+.logo, form {
+  display: inline-block;
+  vertical-align: middle
 }
 
-input {
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 20px;
-}
-
-button {
-  height: 50px;
-  border-radius: 5px;
-  vertical-align: top;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-/* RESULTS STYLING */
-
-.main {
-  margin: 20px auto 0 auto;
-  padding: 0 10%;
-}
-
-img {
-  max-width: 300px;
-  width: 100%;
-}
-
-.results-section {
-  border: 2px solid lightGrey;
-}
-
-.comics-section {
-  border: 2px solid lightGrey;
-}
-
-.events-section {
-  border: 2px solid lightGrey;
-}
-
-.videos-section {
-  border: 2px solid lightGrey;
-}
-
-.videos-section .result {
-  border: 1px solid lightGrey;
-}
-
-/* VIDEO LIGHT BOX STYLING */
-
-#light-box {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  top: 0;
-  left: 0;
-}
-
-#light-box iframe {
-  max-width: 60%;
-  max-height: 60%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-.close-button {
-  border: 2px solid white;
+.logo {
+  height: 75px;
   padding: 5px;
-  border-radius: 5px;
-  position: relative;
-  top: 60px;
-  left: 40px;
-  color: white;
 }
 
-.close-button:hover {
-  background-color: #FFB81C;
+form * {
+  border-radius: 5px;
+  font-size: 22px;
+  padding: 10px;
+}
+
+#search-button {
+  background-color: dimGray;
+  border: 1px solid #505050;
+  color: silver;
+}
+
+#search-button:hover {
+  background-color: #505050;
   cursor: pointer;
-  color: black;
-  font-weight: bold;
+}
+
+ /*Main Area Styling */
+
+main {
+  margin: auto;
+  max-width: 1000px;
+  position: relative;
+  top: 100px;
+  z-index: -1;
+}
+
+.results-section, .comics-section, .events-section, .videos-section {
+  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid lightGrey;
+  border-radius: 3px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.character-photo {
+  border: 5px solid black;
+  border-radius: 3px;
+  width: 300px;
 }

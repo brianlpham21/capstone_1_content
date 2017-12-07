@@ -13,28 +13,29 @@
     </script>
   </head>
   <body>
-    
-    <header role='banner' class='container'>
-      <div class='heading'>
-        <h1>Enter a Marvel Character Name:</h1>
-        <form action='#' class='search-form'>
-          <label for='user-input'></label>
-          <input type='text' class='user-input' id='user-input' size='20'>
-          <button type='submit'>Search</button>
-        </form>
+    <nav>
+      <div id='nav-container'>
+        <div id='top-container'>
+          <img class='logo' src='https://upload.wikimedia.org/wikipedia/en/9/9c/Marvel_Animation_Logo.jpg' alt='marvel-logo'>
+
+          <form action='#'>
+            <input type='text' size='35' placeholder='Search a Marvel character...'>
+            <button type='submit' id='search-button'>Search</button>
+          </form>
+        </div>
       </div>
-    </header>
-    
+    </nav>
+
     <main role='main'>
-      <section class='main results-section' aria-live='assertive' hidden></section>
-      <section class='main comics-section' aria-live='assertive' hidden></section>
-      <section class='main events-section' aria-live='assertive' hidden></section>
-      <aside class='main videos-section' aria-live='assertive' hidden></aside>
+      <section class='results-section' aria-live='assertive' hidden></section>
+      <section class='comics-section' aria-live='assertive' hidden></section>
+      <section class='events-section' aria-live='assertive' hidden></section>
+      <aside class='videos-section' aria-live='assertive' hidden></aside>
     </main>
-    
+
     <section class='light-box-area' aria-live='assertive' hidden>
     </section>
-    
+
     <script src="index.js"></script>
   </body>
 </html>
