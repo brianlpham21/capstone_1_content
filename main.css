@@ -6,7 +6,7 @@
 }
 
 body {
-  background: url('http://art.cafimg.com/images/Category_120629/subcat_182493/EnSG7eJa_0105171442471gpadd.jpg');
+  background: url('./EnSG7eJa_0105171442471gpadd.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
