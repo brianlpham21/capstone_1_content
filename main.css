@@ -8,7 +8,7 @@ body {
   background: url('http://art.cafimg.com/images/Category_120629/subcat_182493/EnSG7eJa_0105171442471gpadd.jpg');
   background-attachment: fixed;
   background-size: cover;
-  background-position: center
+  background-position: center;
 }
 
 /* Top Bar Styling */
@@ -36,7 +36,7 @@ nav {
 
 .logo {
   height: 75px;
-  padding: 5px;
+  padding: 6px 10px 6px 20px;
 }
 
 form * {
@@ -66,7 +66,11 @@ main {
   z-index: -1;
 }
 
-.results-section, .comics-section, .events-section, .videos-section {
+.unknown {
+  text-align: center;
+}
+
+.unknown-section, .results-section, .comics-section, .events-section, .videos-section {
   background: rgb(255, 255, 255);
   background: rgba(255, 255, 255, 0.9);
   border: 2px solid lightGrey;
@@ -77,8 +81,21 @@ main {
   padding: 20px;
 }
 
+.results-section {
+  height: 400px
+}
+
 .character-photo {
-  border: 5px solid black;
+  border: 5px solid dimGray;
   border-radius: 3px;
+  float: left;
   width: 300px;
+}
+
+.results-text {
+  padding-left: 315px;
+}
+
+.comics-section {
+  clear: both;
 }

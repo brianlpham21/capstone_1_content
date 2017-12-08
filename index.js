@@ -21,12 +21,14 @@ function retrieveJSON(searchTerm, callback1, callback2) {
 
 function displayMarvelData(data) {
   if (data.data.results[0] === undefined) {
-    $('.results-section').html(`
-      <img src='https://vignette.wikia.nocookie.net/mafiagame/images/2/23/Unknown_Person.png/revision/latest/scale-to-width-down/464?cb=20151119092211' class='character-photo' alt='unknown-photo'>
-      <h4>No character found by that name.</h4>
+    $('.unknown-section').html(`
+      <div class='unknown'>
+        <h2>No character found by that name.</h2>
+      </div>
     `);
 
-    $('.results-section').prop('hidden', false);
+    $('.unknown-section').prop('hidden', false);
+    $('.results-section').prop('hidden', true);
     $('.comics-section').prop('hidden', true);
     $('.events-section').prop('hidden', true);
     $('.videos-section').prop('hidden', true);
@@ -35,13 +37,14 @@ function displayMarvelData(data) {
   else {
     $('.results-section').html(`
       <img src='${data.data.results[0].thumbnail.path + '.' + data.data.results[0].thumbnail.extension}' class='character-photo' alt='character-photo'>
-      <div class='text'>
-        <h4>${data.data.results[0].name}</h4>
+      <div class='results-text'>
+        <h2>${data.data.results[0].name}</h2>
         <p>${data.data.results[0].description}</p>
         <p>More Information: <a href='${data.data.results[0].urls[0].url}' target='_blank'>${data.data.results[0].name}</a>
       </div>
     `);
 
+    $('.unknown-section').prop('hidden', true);
     $('.comics-section').prop('hidden', false);
     $('.events-section').prop('hidden', false);
     $('.videos-section').prop('hidden', false);
@@ -63,6 +66,10 @@ function displayMarvelData(data) {
             <a href='${item.urls[0].url}' target='_blank'><img src='${item.thumbnail.path + '.' + item.thumbnail.extension}'></a>
           </div>
         `});
+
+      const comicHeading = '<h2>Comic Appearances:</h2>';
+      results.unshift(comicHeading);
+
       $('.comics-section').html(results);
     });
 
@@ -82,6 +89,10 @@ function displayMarvelData(data) {
             <a href='${item.urls[0].url}' target='_blank'><img src='${item.thumbnail.path + '.' + item.thumbnail.extension}'></a>
           </div>
         `});
+
+      const eventHeading = '<h2>Event Appearances:</h2>';
+      results.unshift(eventHeading);
+
       $('.events-section').html(results);
     });
   }
@@ -95,11 +106,14 @@ function displayYouTubeData(data) {
         <p>Channel:
           <a href='https://www.youtube.com/channel/${item.snippet.channelId}' target='_blank'>${item.snippet.channelTitle}</a>
         </p>
-        <p>${item.snippet.description}</p><br>
+        <p>${item.snippet.description}</p>
         <a href='#' class='video' id='${item.id.videoId}'><img src='${item.snippet.thumbnails.medium.url}'></a>
-      </div><br>
+      </div>
     `;
   });
+
+  const videoHeading = '<h2>Videos:</h2>';
+  results.unshift(videoHeading);
 
   $('.videos-section').html(results);
 }
