@@ -144,11 +144,7 @@ function watchSubmit() {
 
 function watchLogo() {
   $('.logo').on('click', function() {
-    $('.main-unknown-section').prop('hidden', true);
-    $('.main-results-section').prop('hidden', true);
-    $('.main-comics-section').prop('hidden', true);
-    $('.main-events-section').prop('hidden', true);
-    $('.main-videos-section').prop('hidden', true);
+    location.reload();
   });
 }
 

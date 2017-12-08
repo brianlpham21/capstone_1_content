@@ -130,11 +130,15 @@ main {
 }
 
 .description {
-  height: 150px;
+  height: 175px;
+  margin: 5px 10px;
   overflow: scroll;
+  padding: 10px;
+  text-align: left
 }
 
 .image {
+  padding: 20px 10px 5px 10px;
   width: 300px
 }
 
@@ -145,3 +149,26 @@ main {
 .comics-section, .events-section {
   display: flex;
 }
+
+@media only screen and (max-width: 425px) {
+  #nav-container {
+    width: 100%;
+    text-align: center
+  }
+
+  form * {
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 90%;
+  }
+}
+
+/*footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}*/
