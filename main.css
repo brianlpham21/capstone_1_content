@@ -71,7 +71,7 @@ main {
   top: 100px;
 }
 
-.main-unknown-section, .main-results-section, .main-comics-section, .main-events-section, .main-videos-section {
+.main-unknown-section, .main-results-section, .main-comics-section, .main-events-section, .main-videos-section, .main-share-section {
   background: rgb(255, 255, 255);
   background: rgba(255, 255, 255, 0.9);
   border: 2px solid lightGrey;
@@ -116,7 +116,7 @@ main {
   height: 11px;
 }
 
-.comics-section, .events-section, .videos-section {
+.comics-section, .events-section, .videos-section, .share-section {
   clear: both;
   text-align: center
 }
@@ -137,9 +137,17 @@ main {
   text-align: left
 }
 
+.no-description {
+  padding: 10px;
+}
+
 .image {
   padding: 20px 10px 5px 10px;
-  width: 300px
+  width: 200px
+}
+
+.image:hover, .video:hover {
+  opacity: 0.8;
 }
 
 .comic-result {
@@ -150,25 +158,91 @@ main {
   display: flex;
 }
 
+.main-comics-section, .main-events-section, .main-share-section {
+  float: left;
+  width: 65%
+}
+
+.main-videos-section {
+  float: right;
+  width: 30%
+}
+
+.video {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.video-title {
+  font-size: 17px
+}
+
+.video-channel, .video-description {
+  font-size: 15px
+}
+
+.video-description {
+  height: 100px;
+  margin: 10px 10px 0 10px;
+  overflow: scroll;
+  text-align: left
+}
+
 @media only screen and (max-width: 425px) {
   #nav-container {
     width: 100%;
     text-align: center
   }
 
+  .logo {
+    margin: 10px 0;
+  }
+
   form * {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     padding: 5px;
     width: 90%;
   }
+
+  .comics-section, .events-section {
+    display: block;
+  }
 }
 
-/*footer {
-  position: relative;
-  right: 0;
-  bottom: 0;
+/* VIDEO LIGHT BOX STYLING */
+
+#light-box {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
   left: 0;
-  padding: 1rem;
-  background-color: #efefef;
-  text-align: center;
-}*/
+}
+
+iframe {
+  max-width: 60%;
+  max-height: 60%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.close-button {
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 5px;
+  position: relative;
+  top: 100px;
+  left: 40px;
+  color: white;
+}
+
+.close-button:hover {
+  background-color: #505050;
+  cursor: pointer;
+}
