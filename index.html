@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Marvel Character Search</title>
+    <title>Marvel | Character Information Search</title>
     <link href="main.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Expanded" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
     <script
           src="https://code.jquery.com/jquery-3.2.1.min.js"
           integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
           crossorigin="anonymous">
     </script>
-    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">
+    <link rel="icon" type="image/png" href="http://hidetoyasunori.com/portfolio/wp-content/uploads/2017/02/marvel_favicon.png">
   </head>
   <body>
     <nav>
@@ -28,10 +28,24 @@
     </nav>
 
     <main role='main'>
-      <section class='results-section' aria-live='assertive' hidden></section>
-      <section class='comics-section' aria-live='assertive' hidden></section>
-      <section class='events-section' aria-live='assertive' hidden></section>
-      <aside class='videos-section' aria-live='assertive' hidden></aside>
+      <section class='main-unknown-section' aria-live='assertive' hidden>
+        <div class='unknown-section'></div>
+      </section>
+      <section class='main-results-section' aria-live='assertive' hidden>
+        <div class='results-section'></div>
+      </section>
+      <section class='main-comics-section' aria-live='assertive' hidden>
+        <h2 class='section-title'>COMIC APPEARANCES</h2><hr>
+        <div class='comics-section'></div>
+      </section>
+      <section class='main-events-section' aria-live='assertive' hidden>
+        <h2 class='section-title'>EVENT APPEARANCES</h2><hr>
+        <div class='events-section'></div>
+      </section>
+      <aside class='main-videos-section' aria-live='assertive' hidden>
+        <h2 class='section-title'>VIDEOS</h2><hr>
+        <div class='videos-section'></div>
+      </aside>
     </main>
 
     <section class='light-box-area' aria-live='assertive' hidden>
