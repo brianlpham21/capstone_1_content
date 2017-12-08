@@ -74,16 +74,16 @@ function displayMarvelData(data) {
       apikey: 'b9387eb3d701ea1e371e1f554eb585c5',
       ts: '1',
       hash: 'c516f34ed1b8c272e76721b1be1dfe71',
-      limit: 5
+      limit: 3
     };
 
     $.getJSON(MARVEL_COMICS_API + data.data.results[0].id + '/comics', query_comics, function(data) {
       const results = data.data.results.map((item, index) => {
         return `
           <div class='comic-result'>
+            <a href='${item.urls[0].url}' target='_blank'><img src='${item.thumbnail.path + '.' + item.thumbnail.extension}' class='image' alt='comic-photo'></a>
             <h4 class='item-title'>${item.title}</h4>
             <p class='description'>${item.description}</p>
-            <a href='${item.urls[0].url}' target='_blank'><img src='${item.thumbnail.path + '.' + item.thumbnail.extension}' class='image' alt='comic-photo'></a>
           </div>
         `});
 
@@ -94,16 +94,16 @@ function displayMarvelData(data) {
       apikey: 'b9387eb3d701ea1e371e1f554eb585c5',
       ts: '1',
       hash: 'c516f34ed1b8c272e76721b1be1dfe71',
-      limit: 5
+      limit: 3
     };
 
     $.getJSON(MARVEL_EVENTS_API + data.data.results[0].id + '/events', query_events, function(data) {
       const results = data.data.results.map((item, index) => {
         return `
           <div class='event-result'>
+            <a href='${item.urls[0].url}' target='_blank'><img src='${item.thumbnail.path + '.' + item.thumbnail.extension}' class='image' alt='event-photo'></a>
             <h4 class='item-title'>${item.title}</h4>
             <p class='description'>${item.description}</p>
-            <a href='${item.urls[0].url}' target='_blank'><img src='${item.thumbnail.path + '.' + item.thumbnail.extension}' class='image' alt='event-photo'></a>
           </div>
         `});
 
@@ -120,7 +120,7 @@ function displayYouTubeData(data) {
         <p>Channel:
           <a href='https://www.youtube.com/channel/${item.snippet.channelId}' target='_blank'>${item.snippet.channelTitle}</a>
         </p>
-        <p class='description'>${item.snippet.description}</p>
+        <p class='video-description'>${item.snippet.description}</p>
         <a href='#' class='video' id='${item.id.videoId}'><img src='${item.snippet.thumbnails.medium.url}'></a>
       </div>
     `;

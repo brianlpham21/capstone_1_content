@@ -127,11 +127,11 @@ main {
 
 .item-title {
   font-size: 20px;
-  padding: 10px 40px 0 40px;
 }
 
 .description {
-  padding: 10px 150px;
+  height: 150px;
+  overflow: scroll;
 }
 
 .image {
@@ -140,4 +140,8 @@ main {
 
 .comic-result {
   display: inline-block
+}
+
+.comics-section, .events-section {
+  display: flex;
 }
