@@ -22,8 +22,10 @@ function retrieveJSON(searchTerm, callback1, callback2) {
 function displayMarvelData(data) {
   if (data.data.results[0] === undefined) {
     $('.results-section').html(`
-      <img src='https://vignette.wikia.nocookie.net/mafiagame/images/2/23/Unknown_Person.png/revision/latest/scale-to-width-down/464?cb=20151119092211' class='character-photo' alt='unknown-photo'>
-      <h4>No character found by that name.</h4>
+      <div class='unknown-section'>
+        <img src='https://vignette.wikia.nocookie.net/mafiagame/images/2/23/Unknown_Person.png/revision/latest/scale-to-width-down/464?cb=20151119092211' class='character-photo' alt='unknown-photo'>
+        <h4>No character found by that name.</h4>
+      </div>
     `);
 
     $('.results-section').prop('hidden', false);
