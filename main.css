@@ -143,19 +143,20 @@ main {
 
 .image {
   padding: 20px 10px 5px 10px;
-  width: 200px
+  width: 100%;
 }
 
 .image:hover, .video:hover {
   opacity: 0.8;
 }
 
-.comic-result {
-  display: inline-block
+.event-result, .comic-result {
+  width: 100%
 }
 
 .comics-section, .events-section {
   display: flex;
+  flex-direction: row;
 }
 
 .main-comics-section, .main-events-section, .main-share-section {
@@ -202,24 +203,156 @@ main {
   padding-top: 22px;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (min-width: 581px) and (max-width: 830px) {
+  main {
+    position: static;
+    margin-top: 10px
+  }
+
+  nav {
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    position: static;
+    width: 100%;
+  }
+
   #nav-container {
     width: 100%;
     text-align: center
   }
 
   .logo {
-    margin: 10px 0;
+    margin: 8px 0;
   }
 
   form * {
+    font-size: 20px;
+    margin-bottom: 6px;
+    padding: 3px;
+    width: 90%;
+  }
+
+  .main-results-section {
+    height: 350px;
+  }
+
+  .character-description {
+    overflow: hidden
+  }
+
+  .main-events-section, .main-comics-section, .main-videos-section, .main-share-section {
+    float: none;
+    margin: auto;
     margin-bottom: 10px;
-    padding: 5px;
+    width: 95%;
+  }
+
+  .video-result {
+    width: 100%
+  }
+
+  .videos-section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .video-description {
+    font-size: 15px;
+    margin: 0;
+    margin-top: 10px
+  }
+
+  .item-title {
+    font-size: 17px
+  }
+
+  .image, .video {
+    padding: 10px 5px 0 5px;
+  }
+
+  .description {
+    font-size: 15px;
+    height: 100px;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  nav {
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    position: static;
+    width: 100%;
+  }
+
+  #nav-container {
+    width: 100%;
+    text-align: center
+  }
+
+  .logo {
+    margin: 8px 0;
+  }
+
+  form * {
+    font-size: 20px;
+    margin-bottom: 6px;
+    padding: 3px;
     width: 90%;
   }
 
   .comics-section, .events-section {
     display: block;
+  }
+
+  .character-photo {
+    border: 5px solid dimGray;
+    border-radius: 3px;
+    float: none;
+    width: 100%;
+  }
+
+  main {
+    position: static;
+    margin-top: 10px
+  }
+
+  .main-results-section {
+    height: 100%;
+  }
+
+  .results-text {
+    padding-left: 0;
+  }
+
+  .main-events-section, .main-comics-section, .main-videos-section, .main-share-section {
+    float: none;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 95%;
+  }
+
+  .video-description {
+    margin: 0;
+    margin-top: 10px
+  }
+
+  .image {
+    margin-top: 10px;
+    padding: 0;
+  }
+
+  .description {
+    height: 100px;
+    padding: 0;
+  }
+
+  .ss-title {
+    display: none;
+  }
+
+  .ss-icon {
+    width: 40px
   }
 }
 

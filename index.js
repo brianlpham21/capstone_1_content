@@ -13,7 +13,7 @@ function retrieveJSON(searchTerm, callback1, callback2) {
     part: 'snippet',
     key: 'AIzaSyDW6ZU42JlJmV6NVAvR6jruTCKK39wP9ng',
     q: 'marvel ' + searchTerm,
-    maxResults: 4
+    maxResults: 3
   };
 
   $.getJSON(MARVEL_API, query1, callback1);
