@@ -182,7 +182,7 @@ function watchImageClick() {
       $('.light-box-area').append(`
         <div id='light-box'>
           <span class='close-button'>close</span>
-          <iframe width="1425" height="641" src='' frameborder="0" gesture="media" allowfullscreen></iframe>
+          <div class='video-container'><iframe src='' frameborder="0" gesture="media" allowfullscreen></iframe></div>
         </div>`);
 
       $('#light-box').show();

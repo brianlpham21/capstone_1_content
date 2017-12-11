@@ -198,6 +198,10 @@ main {
   width: 50px;
 }
 
+.ss-section:hover {
+  opacity: 0.8;
+}
+
 .share-section * {
   display: inline-block;
   vertical-align: middle
@@ -269,7 +273,7 @@ main {
   }
 
   .video-result {
-    width: 100%
+    width: 33%
   }
 
   .videos-section {
@@ -370,11 +374,16 @@ main {
   .image {
     margin-top: 10px;
     padding: 0;
+    width: 60%;
   }
 
   .description {
     height: 100px;
     padding: 0;
+  }
+
+  .video {
+    width: 90%
   }
 
   .ss-title {
@@ -384,6 +393,7 @@ main {
   .ss-icon {
     width: 40px
   }
+
 }
 
 /* VIDEO LIGHT BOX STYLING */
@@ -398,15 +408,23 @@ main {
   left: 0;
 }
 
-iframe {
-  max-width: 60%;
-  max-height: 60%;
+iframe, object, embed {
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
-  bottom: 0;
   margin: auto;
+  width:70%;
+	height:70%;
+}
+
+.video-container {
+	position:relative;
+	padding-bottom:56.25%;
+  top: 120px;
+	height:0;
+	overflow:hidden;
+  z-index: 1;
 }
 
 .close-button {
