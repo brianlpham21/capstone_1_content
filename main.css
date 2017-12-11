@@ -189,6 +189,10 @@ main {
   text-align: left
 }
 
+.main-share-section {
+  margin-bottom: 5%;
+}
+
 .ss-icon {
   margin: 20px 10px 0 20px;
   width: 50px;
