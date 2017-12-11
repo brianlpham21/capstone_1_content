@@ -233,11 +233,24 @@ main {
   }
 
   .main-results-section {
-    height: 350px;
+    height: 280px;
+  }
+
+  .character-photo {
+    width: 215px;
+  }
+
+  .character-name {
+    font-size: 30px;
   }
 
   .character-description {
+    font-size: 16px;
     overflow: hidden
+  }
+
+  .results-text {
+    padding-left: 235px;
   }
 
   .main-events-section, .main-comics-section, .main-videos-section, .main-share-section {
@@ -253,7 +266,6 @@ main {
 
   .videos-section {
     display: flex;
-    flex-direction: row;
   }
 
   .video-description {
