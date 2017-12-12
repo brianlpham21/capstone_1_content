@@ -1,3 +1,5 @@
+/* Page Resets and Defaults */
+
 * {
   box-sizing: border-box;
   font-family: 'Roboto Condensed', sans-serif;
@@ -5,19 +7,22 @@
   padding: 0;
 }
 
+/* Background Marvel Image */
+
 body {
   background: url('./EnSG7eJa_0105171442471gpadd.jpg');
   background-attachment: fixed;
-  background-size: cover;
   background-position: center;
+  background-size: cover;
   z-index: -1;
 }
 
 .white-overlay {
+  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100vh;
   position: fixed;
   width: 100vw;
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 0.5);
   z-index: -1;
 }
 
@@ -32,17 +37,13 @@ nav {
 }
 
 #nav-container {
-  max-width: 1000px;
   margin: auto;
-}
-
-#top-container {
-  display: inline;
+  max-width: 1100px;
 }
 
 .logo, form {
   display: inline-block;
-  vertical-align: middle
+  vertical-align: middle;
 }
 
 .logo {
@@ -71,38 +72,97 @@ form * {
   cursor: pointer;
 }
 
- /*Main Area Styling */
+@media only screen and (min-width: 581px) and (max-width: 830px) {
+  nav {
+    position: static;
+  }
+
+  #nav-container {
+    text-align: center;
+    width: 100%;
+  }
+
+  .logo {
+    margin: 8px 0;
+  }
+
+  form * {
+    font-size: 20px;
+    margin-bottom: 6px;
+    padding: 3px;
+    width: 90%;
+  }
+
+  input {
+    padding-left: 6px
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  nav {
+    position: static;
+  }
+
+  #nav-container {
+    text-align: center;
+    width: 100%;
+  }
+
+  .logo {
+    margin: 8px 0;
+  }
+
+  form * {
+    font-size: 20px;
+    margin-bottom: 6px;
+    padding: 3px;
+    width: 90%;
+  }
+
+  input {
+    padding-left: 6px
+  }
+}
+
+ /* Main Area Styling */
 
 main {
   margin: auto;
-  max-width: 1000px;
+  max-width: 1100px;
   position: relative;
   top: 100px;
 }
 
-.main-unknown-section, .main-results-section, .main-comics-section, .main-events-section, .main-videos-section, .main-share-section {
-  background: rgb(255, 255, 255);
-  background: rgba(255, 255, 255, 0.9);
-  border: 2px solid lightGrey;
-  border-radius: 3px;
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  padding: 20px;
+@media only screen and (min-width: 581px) and (max-width: 830px) {
+  main {
+    position: static;
+    margin-top: 10px;
+  }
 }
+
+@media only screen and (max-width: 580px) {
+  main {
+    position: static;
+    margin-top: 10px;
+  }
+}
+
+/* Unknown Page Styling */
 
 .unknown {
   text-align: center;
 }
 
-.main-results-section {
-  height: 350px;
+@media only screen and (max-width: 580px) {
+  .unknown {
+    font-size: 12.5px;
+  }
 }
 
-.character-name {
-  font-size: 50px;
-  letter-spacing: -2.5px;
-  text-transform: uppercase;
+/* Main Results Section Styling */
+
+.main-results-section {
+  height: 350px;
 }
 
 .character-photo {
@@ -116,6 +176,12 @@ main {
   padding-left: 325px;
 }
 
+.character-name {
+  font-size: 50px;
+  letter-spacing: -2.5px;
+  text-transform: uppercase;
+}
+
 .character-description {
   font-size: 20px;
   padding: 10px 0;
@@ -125,29 +191,80 @@ main {
   height: 11px;
 }
 
-.comics-section, .events-section, .videos-section, .share-section {
-  clear: both;
-  text-align: center
+@media only screen and (min-width: 581px) and (max-width: 830px) {
+  .main-results-section {
+    height: 280px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .character-photo {
+    width: 215px;
+  }
+
+  .results-text {
+    padding-left: 235px;
+  }
+
+  .character-name {
+    font-size: 45px;
+    letter-spacing: -2px;
+  }
+
+  .character-description {
+    font-size: 15px;
+  }
+
+  .read-more {
+    font-size: 15px;
+  }
 }
 
-.section-title {
-  font-size: 32px;
+@media only screen and (max-width: 580px) {
+  .main-results-section {
+    height: 100%;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 95%;
+  }
+
+  .character-photo {
+    float: none;
+    width: 100%;
+  }
+
+  .results-text {
+    padding-left: 0;
+  }
+
+  .character-name {
+    font-size: 40px;
+    letter-spacing: -2px
+  }
+
+  .character-description {
+    font-size: 16px
+  }
 }
 
-.item-title {
-  font-size: 20px;
+/* Other Sections Styling */
+.main-comics-section, .main-events-section, .main-share-section {
+  float: left;
+  text-align: center;
+  width: 65%;
 }
 
-.description {
-  height: 175px;
-  margin: 5px 10px;
-  overflow: scroll;
-  padding: 10px;
-  text-align: left
+.main-videos-section {
+  float: right;
+  width: 30%;
 }
 
-.no-description {
-  padding: 10px;
+.comics-section, .events-section {
+  display: flex;
+}
+
+.event-result, .comic-result {
+  width: 100%;
 }
 
 .image {
@@ -159,23 +276,26 @@ main {
   opacity: 0.8;
 }
 
-.event-result, .comic-result {
-  width: 100%
+.section-title {
+  font-size: 32px;
+  text-align: left;
 }
 
-.comics-section, .events-section {
-  display: flex;
-  flex-direction: row;
+.item-title {
+  font-size: 20px;
+  padding: 0 5px;
 }
 
-.main-comics-section, .main-events-section, .main-share-section {
-  float: left;
-  width: 65%
+.description {
+  height: 150px;
+  margin: 5px 5px;
+  overflow: scroll;
+  padding: 5px 5px;
+  text-align: left;
 }
 
-.main-videos-section {
-  float: right;
-  width: 30%
+.no-description {
+  padding: 10px;
 }
 
 .video {
@@ -183,8 +303,9 @@ main {
   width: 100%;
 }
 
-.video-title {
-  font-size: 17px
+.video-title, .video-channel {
+  font-size: 17px;
+  text-align: center;
 }
 
 .video-channel, .video-description {
@@ -193,13 +314,17 @@ main {
 
 .video-description {
   height: 100px;
-  margin: 10px 10px 0 10px;
+  margin: 10px 5px 0 5px;
   overflow: scroll;
-  text-align: left
 }
 
-.main-share-section {
-  margin-bottom: 5%;
+.share-section * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.ss-section:hover {
+  opacity: 0.8;
 }
 
 .ss-icon {
@@ -207,93 +332,39 @@ main {
   width: 50px;
 }
 
-.ss-section:hover {
-  opacity: 0.8;
-}
-
-.share-section * {
-  display: inline-block;
-  vertical-align: middle
-}
-
 .ss-title {
   padding-top: 22px;
 }
 
+.main-share-section {
+  margin-bottom: 5%;
+}
+
 @media only screen and (min-width: 581px) and (max-width: 830px) {
-  main {
-    position: static;
-    margin-top: 10px
+  .item-title {
+    font-size: 17px;
+    padding: 0 5px;
   }
 
-  nav {
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.5);
-    position: static;
-    width: 100%;
+  .image, .video {
+    margin-top: 0;
+    padding: 10px 5px 0 5px;
   }
 
-  #nav-container {
-    width: 100%;
-    text-align: center
-  }
-
-  .logo {
-    margin: 8px 0;
-  }
-
-  form * {
-    font-size: 20px;
-    margin-bottom: 6px;
-    padding: 3px;
-    width: 90%;
-  }
-
-  input {
-    padding-left: 6px
-  }
-
-  .main-results-section {
-    height: 280px;
-    margin-right: 20px;
-    margin-left: 20px;
-  }
-
-  .character-photo {
-    width: 215px;
-  }
-
-  .character-name {
-    font-size: 45px;
-    letter-spacing: -2px;
-  }
-
-  .character-description {
-    font-size: 15px;
-    overflow: hidden
-  }
-
-  .read-more {
-    font-size: 15px;
-  }
-
-  .results-text {
-    padding-left: 235px;
-  }
-
-  .main-events-section, .main-comics-section, .main-videos-section, .main-share-section {
-    float: none;
-    margin: auto;
-    margin-bottom: 10px;
-    width: 95%;
-  }
-
-  .video-result {
-    width: 33%
+  .description {
+    font-size: 14px;
+    height: 100px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 0 5px;
   }
 
   .videos-section {
     display: flex;
+  }
+
+  .video-result {
+    width: 33%
   }
 
   .video-title, .video-channel {
@@ -301,106 +372,19 @@ main {
   }
 
   .video-description {
-    font-size: 15px;
-    margin: 0;
-    margin-top: 10px;
-    padding: 5px
-  }
-
-  .item-title {
-    font-size: 17px;
-    padding: 0 5px;
-  }
-
-  .image, .video {
-    padding: 10px 5px 0 5px;
-  }
-
-  .description {
-    font-size: 15px;
-    height: 100px;
-    padding: 0;
+    font-size: 14px;
+    margin: 10px 5px 0 5px;
+    padding: 0 5px
   }
 }
 
 @media only screen and (max-width: 580px) {
-  nav {
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.5);
-    position: static;
-    width: 100%;
-  }
-
-  #nav-container {
-    width: 100%;
-    text-align: center
-  }
-
-  .logo {
-    margin: 8px 0;
-  }
-
-  form * {
-    font-size: 20px;
-    margin-bottom: 6px;
-    padding: 3px;
-    width: 90%;
-  }
-
-  input {
-    padding-left: 6px
-  }
-
   .comics-section, .events-section {
     display: block;
   }
 
-  .character-photo {
-    border: 5px solid dimGray;
-    border-radius: 3px;
-    float: none;
-    width: 100%;
-  }
-
-  .character-name {
-    font-size: 40px;
-    letter-spacing: -2px
-  }
-
-  .character-description {
-    font-size: 16px
-  }
-
-  main {
-    position: static;
-    margin-top: 10px
-  }
-
-  .main-results-section {
-    height: 100%;
-    width: 95%;
-    margin: auto;
-    margin-bottom: 10px;
-  }
-
-  .results-text {
-    padding-left: 0;
-  }
-
-  .main-events-section, .main-comics-section, .main-videos-section, .main-share-section {
-    float: none;
-    margin: auto;
-    margin-bottom: 10px;
-    width: 95%;
-  }
-
-  .video-description {
-    margin: 0;
-    margin-top: 10px
-  }
-
   .image {
-    margin-top: 10px;
+    margin-top: 15px;
     padding: 0;
     width: 60%;
   }
@@ -410,8 +394,18 @@ main {
     padding: 0;
   }
 
+  .videos-section {
+    text-align: center;
+  }
+
   .video {
-    width: 90%
+    width: 90%;
+  }
+
+  .video-description {
+    margin: 0;
+    margin-top: 10px;
+    text-align: left;
   }
 
   .ss-title {
@@ -419,50 +413,79 @@ main {
   }
 
   .ss-icon {
-    width: 40px
+    margin: 20px 10px 0 10px;
+    width: 55px;
   }
-
 }
 
-/* VIDEO LIGHT BOX STYLING */
+/* Sectional Box Styling */
+
+.main-unknown-section, .main-results-section, .main-comics-section, .main-events-section, .main-videos-section, .main-share-section {
+  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid lightGrey;
+  border-radius: 3px;
+  margin: 0 10px 10px 10px;
+  padding: 20px;
+}
+
+@media only screen and (min-width: 581px) and (max-width: 830px) {
+  .main-events-section, .main-comics-section, .main-videos-section, .main-share-section {
+    float: none;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .main-events-section, .main-comics-section, .main-videos-section, .main-share-section {
+    float: none;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 95%;
+  }
+}
+
+/* Video Light Box Styling */
 
 #light-box {
-  position: fixed;
-  height: 100%;
-  width: 100%;
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.5);
-  top: 0;
+  height: 100%;
   left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 iframe, object, embed {
-  position: absolute;
+  height: 70%;
   left: 0;
+  margin: auto;
+  position: absolute;
   right: 0;
   top: 0;
-  margin: auto;
   width:70%;
-	height:70%;
 }
 
 .video-container {
-	position:relative;
-	padding-bottom:56.25%;
+  height: 0;
+	overflow: hidden;
+	position: relative;
+	padding-bottom: 56.25%;
   top: 120px;
-	height:0;
-	overflow:hidden;
   z-index: 1;
 }
 
 .close-button {
   border: 2px solid white;
-  padding: 5px;
   border-radius: 5px;
+  color: white;
+  padding: 5px;
   position: relative;
   top: 100px;
   left: 40px;
-  color: white;
 }
 
 .close-button:hover {

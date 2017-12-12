@@ -1,7 +1,26 @@
+/* these variables are created to hold values for the 2 different API's used in the application as well as for 2 subset API's*/
+
 const MARVEL_API = 'https://gateway.marvel.com:443/v1/public/characters?apikey=b9387eb3d701ea1e371e1f554eb585c5';
 const MARVEL_COMICS_API = 'https://gateway.marvel.com:443/v1/public/characters/';
 const MARVEL_EVENTS_API = 'https://gateway.marvel.com:443/v1/public/characters/';
 const YOUTUBE_API = 'https://www.googleapis.com/youtube/v3/search';
+
+/* function: watches for user input submit, passing the value to be processed and resetting the input value */
+
+function watchSubmit() {
+  $('form').on('submit', function(event) {
+    event.preventDefault();
+
+    const queryTarget = $(event.currentTarget).find('input');
+    const queryTerm = (queryTarget.val());
+
+    retrieveJSON(queryTerm, displayMarvelData, displayYouTubeData);
+
+    queryTarget.val("");
+  });
+}
+
+/* function: takes the user input and display data callbacks to retrieve the JSON data via the JSON Method */
 
 function retrieveJSON(searchTerm, callback1, callback2) {
   const query1 = {
@@ -19,6 +38,8 @@ function retrieveJSON(searchTerm, callback1, callback2) {
   $.getJSON(MARVEL_API, query1, callback1);
   $.getJSON(YOUTUBE_API, query2, callback2);
 }
+
+/* the first callback function that displays the information retrieved from the Marvel API */
 
 function displayMarvelData(data) {
   if (data.data.results[0] === undefined) {
@@ -74,6 +95,8 @@ function displayMarvelData(data) {
       $('.main-share-section').prop('hidden', false);
     }
 
+    /* JSON method and Marvel Events data display */
+
     const query_events = {
       apikey: 'b9387eb3d701ea1e371e1f554eb585c5',
       ts: '1',
@@ -94,6 +117,7 @@ function displayMarvelData(data) {
       $('.events-section').html(results);
     });
 
+    /* JSON method and Marvel Comics data display */
 
     const query_comics = {
       apikey: 'b9387eb3d701ea1e371e1f554eb585c5',
@@ -112,7 +136,7 @@ function displayMarvelData(data) {
               <h4 class='item-title'>${item.title}</h4>
               <p class='no-description'>No description available.</p>
             </div>
-          `
+          `;
         }
         else {
           return `
@@ -130,15 +154,15 @@ function displayMarvelData(data) {
   }
 }
 
+/* the second callback function that displays the information retrieved from the YouTube API */
+
 function displayYouTubeData(data) {
   const results = data.items.map((item, index) => {
     return `
       <div class='video-result'>
         <a href='#' class='video-box' id='${item.id.videoId}'><img src='${item.snippet.thumbnails.medium.url}' class='video' alt='video-image'></a>
         <h4 class='video-title'>${item.snippet.title}</h4>
-        <p class='video-channel'>Channel:
-          <a href='https://www.youtube.com/channel/${item.snippet.channelId}' target='_blank'>${item.snippet.channelTitle}</a>
-        </p>
+        <p class='video-channel'>Channel:<a href='https://www.youtube.com/channel/${item.snippet.channelId}' target='_blank'>${item.snippet.channelTitle}</a></p>
         <p class='video-description'>${item.snippet.description}</p>
       </div>
     `;
@@ -147,18 +171,7 @@ function displayYouTubeData(data) {
   $('.videos-section').html(results);
 }
 
-function watchSubmit() {
-  $('form').on('submit', function(event) {
-    event.preventDefault();
-
-    const queryTarget = $(event.currentTarget).find('input');
-    const queryTerm = (queryTarget.val());
-
-    retrieveJSON(queryTerm, displayMarvelData, displayYouTubeData);
-
-    queryTarget.val("");
-  });
-}
+/* watches from the upper logo click, reloading the page */
 
 function watchLogo() {
   $('.logo').on('click', function() {
@@ -166,12 +179,11 @@ function watchLogo() {
   });
 }
 
-$(watchSubmit);
-$(watchLogo);
+/* LIGHTBOX FEATURES */
 
-// LightBox Features
+/* watches for YouTube video image click, displaying the lightbox and the video player */
 
-function watchImageClick() {
+function watchVideoImageClick() {
   $('.videos-section').on('click', '.video-box', function() {
     $('.light-box-area').prop('hidden', false);
 
@@ -183,29 +195,33 @@ function watchImageClick() {
         <div id='light-box'>
           <span class='close-button'>close</span>
           <div class='video-container'><iframe src='' frameborder="0" gesture="media" allowfullscreen></iframe></div>
-        </div>`);
+        </div>
+        `);
 
-      $('#light-box').show();
       $('iframe').attr('src', link);
     }
     else {
-      $('#light-box').show();
       $('iframe').attr('src', link);
     }
   });
 }
+
+/* watches for the click on the light-box-area close button to close the lightbox display */
 
 function watchCloseClick() {
   $('.light-box-area').on('click', '.close-button', function() {
     $('.light-box-area').prop('hidden', true);
-    $('#light-box').hide();
     $('iframe').attr('src', '');
   });
 }
 
-function addLightBoxFeatures() {
-  watchImageClick();
+/* packs the functions into one call */
+
+function addEventListeners() {
+  watchSubmit();
+  watchLogo();
+  watchVideoImageClick();
   watchCloseClick();
 }
 
-$(addLightBoxFeatures);
+$(addEventListeners);
