@@ -10,6 +10,15 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
+  z-index: -1;
+}
+
+.white-overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: -1;
 }
 
 /* Top Bar Styling */
@@ -246,6 +255,8 @@ main {
 
   .main-results-section {
     height: 280px;
+    margin-right: 20px;
+    margin-left: 20px;
   }
 
   .character-photo {
@@ -253,12 +264,17 @@ main {
   }
 
   .character-name {
-    font-size: 30px;
+    font-size: 45px;
+    letter-spacing: -2px;
   }
 
   .character-description {
-    font-size: 16px;
+    font-size: 15px;
     overflow: hidden
+  }
+
+  .read-more {
+    font-size: 15px;
   }
 
   .results-text {
@@ -346,6 +362,15 @@ main {
     width: 100%;
   }
 
+  .character-name {
+    font-size: 40px;
+    letter-spacing: -2px
+  }
+
+  .character-description {
+    font-size: 16px
+  }
+
   main {
     position: static;
     margin-top: 10px
@@ -353,6 +378,9 @@ main {
 
   .main-results-section {
     height: 100%;
+    width: 95%;
+    margin: auto;
+    margin-bottom: 10px;
   }
 
   .results-text {

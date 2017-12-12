@@ -62,7 +62,7 @@ function displayMarvelData(data) {
           <h2 class='character-name'>${data.data.results[0].name}</h2>
           <hr>
           <p class='character-description'>${data.data.results[0].description}</p>
-          <p><strong>Read More</strong> <a href='${data.data.results[0].urls[0].url}' target='_blank'><img src='https://image.flaticon.com/icons/png/128/108/108528.png' class='more-icon' alt='click-more-icon'></a></p>
+          <p class='read-more'><strong>Read More</strong> <a href='${data.data.results[0].urls[0].url}' target='_blank'><img src='https://image.flaticon.com/icons/png/128/108/108528.png' class='more-icon' alt='click-more-icon'></a></p>
         </div>
       `);
 
