@@ -248,6 +248,7 @@ main {
 }
 
 /* Other Sections Styling */
+
 .main-comics-section, .main-events-section, .main-share-section {
   float: left;
   text-align: center;
@@ -334,10 +335,6 @@ main {
 
 .ss-title {
   padding-top: 22px;
-}
-
-.main-share-section {
-  margin-bottom: 5%;
 }
 
 @media only screen and (min-width: 581px) and (max-width: 830px) {
@@ -427,6 +424,10 @@ main {
   border-radius: 3px;
   margin: 0 10px 10px 10px;
   padding: 20px;
+}
+
+.main-share-section {
+  margin-bottom: 5%;
 }
 
 @media only screen and (min-width: 581px) and (max-width: 830px) {
