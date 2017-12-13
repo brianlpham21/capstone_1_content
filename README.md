@@ -4,11 +4,13 @@
 
 ##Users will use Marvel Character Search to visit a site that will collectively provide all the information available on the official Marvel and Youtube websites regarding their characters.
 
+[Screenshots](https://gist.github.com/brianlpham21/76eeee95c2730ea8da9512aaef1161cb)
+
 #UX
 
 Initial wireframes and User Flows for the project can be viewed below. The wireframes were created with the user flow and data processing tasks in mind.
 
-[Wireframes](https://flexbox.io/)
+[Wireframes](https://gist.github.com/brianlpham21/164bdc1c5bf9743a7484602757624bae)
 
 ##Live Site you can access Marvel Character Search at:  https://brianlpham21.github.io/marvel-character-search/
 
