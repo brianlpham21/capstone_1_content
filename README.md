@@ -8,7 +8,7 @@
 
 Initial wireframes and User Flows for the project can be viewed below. The wireframes were created with the user flow and data processing tasks in mind.
 
-[Wireframes]('https://flexbox.io/')
+[Wireframes](https://flexbox.io/)
 
 ##Live Site you can access Marvel Character Search at:  https://brianlpham21.github.io/marvel-character-search/
 
