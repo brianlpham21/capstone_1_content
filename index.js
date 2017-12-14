@@ -162,7 +162,7 @@ function displayYouTubeData(data) {
       <div class='video-result'>
         <a href='#' class='video-box' id='${item.id.videoId}'><img src='${item.snippet.thumbnails.medium.url}' class='video' alt='video-image'></a>
         <h4 class='video-title'>${item.snippet.title}</h4>
-        <p class='video-channel'>Channel:<a href='https://www.youtube.com/channel/${item.snippet.channelId}' target='_blank'>${item.snippet.channelTitle}</a></p>
+        <p class='video-channel'>Channel: <a href='https://www.youtube.com/channel/${item.snippet.channelId}' target='_blank'>${item.snippet.channelTitle}</a></p>
         <p class='video-description'>${item.snippet.description}</p>
       </div>
     `;
