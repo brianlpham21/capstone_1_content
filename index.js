@@ -39,11 +39,18 @@ function retrieveJSON(searchTerm, callback1, callback2) {
   $.getJSON(YOUTUBE_API, query2, callback2);
 }
 
-/* the first callback function that displays the information retrieved from the Marvel API */
+/* these two functions are used to clean up the links and descriptions that are provided by the APIs */
 
 function cleanUpLink(link) {
   return link.replace('http:', 'https:');
 }
+
+function cleanUpDescription(description) {
+  return description.replace(/â€™/g, "'").replace(/â€”/g, ' ');
+}
+
+/* the first callback function that displays the information retrieved from the Marvel API */
+
 
 function displayMarvelData(data) {
   if (data.data.results[0] === undefined) {
@@ -114,7 +121,7 @@ function displayMarvelData(data) {
           <div class='event-result'>
             <a href='${item.urls[0].url}' target='_blank'><img src='${cleanUpLink(item.thumbnail.path + '.' + item.thumbnail.extension)}' class='image' alt='event-photo'></a>
             <h4 class='item-title'>${item.title}</h4>
-            <p class='description'>${(item.description).replace(/â€”/g, ' ')}</p>
+            <p class='description'>${cleanUpDescription(item.description)}</p>
           </div>
         `});
 
@@ -146,7 +153,7 @@ function displayMarvelData(data) {
             <div class='comic-result'>
               <a href='${item.urls[0].url}' target='_blank'><img src='${cleanUpLink(item.thumbnail.path + '.' + item.thumbnail.extension)}' class='image' alt='comic-photo'></a>
               <h4 class='item-title'>${item.title}</h4>
-              <p class='description'>${(item.description).replace('â€™', '&rsquo;')}</p>
+              <p class='description'>${cleanUpDescription(item.description)}</p>
             </div>
           `;
         }
