@@ -7,13 +7,13 @@ Users will use Marvel Character Search to visit a site that will collectively pr
 
 [Screenshots](https://gist.github.com/brianlpham21/76eeee95c2730ea8da9512aaef1161cb)
 
-# UX
+## UX
 
 Initial wireframes and User Flows for the project can be viewed below. The wireframes were created with the user flow and data processing tasks in mind.
 
 [Wireframes](https://gist.github.com/brianlpham21/164bdc1c5bf9743a7484602757624bae)
 
-## Live Site you can access Marvel Character Search at:  https://brianlpham21.github.io/marvel-character-search/
+Live Site you can access Marvel Character Search at:  https://brianlpham21.github.io/marvel-character-search/
 
 ## Technical
 - This application was built using HTML, CSS, JavaScript, and jQuery.
