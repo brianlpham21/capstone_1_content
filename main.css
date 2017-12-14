@@ -191,11 +191,15 @@ main {
   height: 11px;
 }
 
+.for-more, .read-more {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 @media only screen and (min-width: 581px) and (max-width: 830px) {
   .main-results-section {
     height: 280px;
-    margin-left: 20px;
-    margin-right: 20px;
   }
 
   .character-photo {
@@ -215,8 +219,8 @@ main {
     font-size: 15px;
   }
 
-  .read-more {
-    font-size: 15px;
+  .for-more, .read-more {
+    font-size: 14px;
   }
 }
 
@@ -431,7 +435,7 @@ main {
 }
 
 @media only screen and (min-width: 581px) and (max-width: 830px) {
-  .main-events-section, .main-comics-section, .main-videos-section, .main-share-section {
+  .main-results-section, .main-events-section, .main-comics-section, .main-videos-section, .main-share-section {
     float: none;
     margin: auto;
     margin-bottom: 10px;

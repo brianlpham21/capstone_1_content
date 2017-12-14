@@ -41,6 +41,10 @@ function retrieveJSON(searchTerm, callback1, callback2) {
 
 /* the first callback function that displays the information retrieved from the Marvel API */
 
+function cleanUpLink(link) {
+  return link.replace('http:', 'https:');
+}
+
 function displayMarvelData(data) {
   if (data.data.results[0] === undefined) {
     $('.unknown-section').html(`
@@ -60,12 +64,12 @@ function displayMarvelData(data) {
   else {
     if (data.data.results[0].description === '') {
       $('.results-section').html(`
-        <img src='${(data.data.results[0].thumbnail.path + '.' + data.data.results[0].thumbnail.extension).replace('http:', 'https:')}' class='character-photo' alt='character-photo'>
+        <img src='${cleanUpLink(data.data.results[0].thumbnail.path + '.' + data.data.results[0].thumbnail.extension)}' class='character-photo' alt='character-photo'>
         <div class='results-text'>
           <h2 class='character-name'>${data.data.results[0].name}</h2>
           <hr>
           <p class='character-description'>No Description Available.</p>
-          <p><strong>For Information</strong> <a href='${(data.data.results[0].urls[0].url).replace('http:', 'https:')}' target='_blank'><img src='https://image.flaticon.com/icons/png/128/108/108528.png' class='more-icon' alt='click-more-icon'></a></p>
+          <a href='${data.data.results[0].urls[0].url}' target='_blank' class='for-more'><p>For Information <img src='https://image.flaticon.com/icons/png/128/108/108528.png' class='more-icon' alt='click-more-icon'></a></p>
         </div>
       `);
 
@@ -78,12 +82,12 @@ function displayMarvelData(data) {
     }
     else {
       $('.results-section').html(`
-        <img src='${(data.data.results[0].thumbnail.path + '.' + data.data.results[0].thumbnail.extension).replace('http:', 'https:')}' class='character-photo' alt='character-photo'>
+        <img src='${cleanUpLink(data.data.results[0].thumbnail.path + '.' + data.data.results[0].thumbnail.extension)}' class='character-photo' alt='character-photo'>
         <div class='results-text'>
           <h2 class='character-name'>${data.data.results[0].name}</h2>
           <hr>
           <p class='character-description'>${data.data.results[0].description}</p>
-          <p class='read-more'><strong>Read More</strong> <a href='${(data.data.results[0].urls[0].url).replace('http:', 'https:')}' target='_blank'><img src='https://image.flaticon.com/icons/png/128/108/108528.png' class='more-icon' alt='click-more-icon'></a></p>
+          <a href='${data.data.results[0].urls[0].url}' target='_blank' class='read-more'><p>Read More <img src='https://image.flaticon.com/icons/png/128/108/108528.png' class='more-icon' alt='click-more-icon'></a></p>
         </div>
       `);
 
@@ -108,9 +112,9 @@ function displayMarvelData(data) {
       const results = data.data.results.map((item, index) => {
         return `
           <div class='event-result'>
-            <a href='${item.urls[0].url}' target='_blank'><img src='${(item.thumbnail.path + '.' + item.thumbnail.extension).replace('http:', 'https:')}' class='image' alt='event-photo'></a>
+            <a href='${item.urls[0].url}' target='_blank'><img src='${cleanUpLink(item.thumbnail.path + '.' + item.thumbnail.extension)}' class='image' alt='event-photo'></a>
             <h4 class='item-title'>${item.title}</h4>
-            <p class='description'>${item.description}</p>
+            <p class='description'>${(item.description).replace(/â€”/g, ' ')}</p>
           </div>
         `});
 
@@ -131,7 +135,7 @@ function displayMarvelData(data) {
         if (item.description === null) {
           return `
             <div class='comic-result'>
-              <a href='${item.urls[0].url}' target='_blank'><img src='${(item.thumbnail.path + '.' + item.thumbnail.extension).replace('http:', 'https:')}' class='image' alt='comic-photo'></a>
+              <a href='${item.urls[0].url}' target='_blank'><img src='${cleanUpLink(item.thumbnail.path + '.' + item.thumbnail.extension)}' class='image' alt='comic-photo'></a>
               <h4 class='item-title'>${item.title}</h4>
               <p class='no-description'>No description available.</p>
             </div>
@@ -140,9 +144,9 @@ function displayMarvelData(data) {
         else {
           return `
             <div class='comic-result'>
-              <a href='${item.urls[0].url}' target='_blank'><img src='${(item.thumbnail.path + '.' + item.thumbnail.extension).replace('http:', 'https:')}' class='image' alt='comic-photo'></a>
+              <a href='${item.urls[0].url}' target='_blank'><img src='${cleanUpLink(item.thumbnail.path + '.' + item.thumbnail.extension)}' class='image' alt='comic-photo'></a>
               <h4 class='item-title'>${item.title}</h4>
-              <p class='description'>${item.description}</p>
+              <p class='description'>${(item.description).replace('â€™', '&rsquo;')}</p>
             </div>
           `;
         }
