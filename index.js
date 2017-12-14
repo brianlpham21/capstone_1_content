@@ -128,7 +128,6 @@ function displayMarvelData(data) {
 
     $.getJSON(MARVEL_COMICS_API + data.data.results[0].id + '/comics', query_comics, function(data) {
       const results = data.data.results.map((item, index) => {
-        console.log(item.description);
         if (item.description === null) {
           return `
             <div class='comic-result'>
