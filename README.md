@@ -13,9 +13,10 @@ Initial wireframes and User Flows for the project can be viewed below. The wiref
 
 [Wireframes](https://gist.github.com/brianlpham21/164bdc1c5bf9743a7484602757624bae)
 
-Live Site you can access Marvel Character Search at:  https://brianlpham21.github.io/marvel-character-search/
+## Live Site
+You can access the Marvel Character Search at:  https://brianlpham21.github.io/marvel-character-search/
 
 ## Technical
 - This application was built using HTML, CSS, JavaScript, and jQuery.
 - The application is fully responsive, available for use on mobile devices, tablets, and desktop viewports.
-- Two API's were utilized in the development of this application: Marvel API (https://developer.marvel.com/) and YouTube API (https://developers.google.com/youtube/).
+- Two APIs were utilized in the development of this application: Marvel API (https://developer.marvel.com/) and YouTube API (https://developers.google.com/youtube/).
