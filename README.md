@@ -1,8 +1,9 @@
-# Marvel Character Search: Thinkful Capstone Project - Asynchronous Web Applications Section - a responsive application that provides information and videos for characters in the Marvel universe.
+# Marvel Character Search
+### Thinkful Capstone Project - Asynchronous Web Applications Section - a responsive application that provides information and videos for characters in the Marvel universe.
 
-## Marvel Character Search allows users to access information about key Marvel characters including Marvel event appearances, Marvel Comic Book appearances as well as YouTube videos that include that Marvel character. Users will provide the Marvel character name in the search bar and the application displays links to Marvel Event and Marvel Comic Book details on the official Marvel Website. Users are also able to click through to view YouTube videos featuring their searched Marvel character.
+Marvel Character Search allows users to access information about key Marvel characters including Marvel event appearances, Marvel Comic Book appearances as well as YouTube videos that include that Marvel character. Users will provide the Marvel character name in the search bar and the application displays links to Marvel Event and Marvel Comic Book details on the official Marvel Website. Users are also able to click through to view YouTube videos featuring their searched Marvel character.
 
-## Users will use Marvel Character Search to visit a site that will collectively provide all the information available on the official Marvel and Youtube websites regarding their characters.
+Users will use Marvel Character Search to visit a site that will collectively provide all the information available on the official Marvel and Youtube websites regarding their characters.
 
 [Screenshots](https://gist.github.com/brianlpham21/76eeee95c2730ea8da9512aaef1161cb)
 
