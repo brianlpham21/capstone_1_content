@@ -14,7 +14,7 @@ Initial wireframes and User Flows for the project can be viewed below. The wiref
 [Wireframes](https://gist.github.com/brianlpham21/164bdc1c5bf9743a7484602757624bae)
 
 ## Live Site
-You can access the Marvel Character Search at:  https://brianlpham21.github.io/marvel-character-search/
+You can access the Marvel Character Search at: https://brianlpham21.github.io/marvel-character-search/
 
 ## Technical
 - This application was built using HTML, CSS, JavaScript, and jQuery.
