@@ -20,20 +20,30 @@ function watchSubmit() {
   });
 }
 
-/* Testing */
+/* Testing function: takes user input and displays list of possible search results */
 
 function watchButton() {
   $('button').on('click', function(event) {
     event.preventDefault();
 
-    for (let i = 0; i < 3; i++) {
-      $('.search-results').append(`
-        <div>
-          <a href="#">Result</a>
-        </div>
-      `);
-    }
+    const query1 = {
+      ts: '1',
+      hash: 'c516f34ed1b8c272e76721b1be1dfe71',
+    };
+
+    $.getJSON(MARVEL_API, query1, displaySearchResults);
   });
+}
+
+function displaySearchResults(data) {
+  console.log(data.data.results[0]);
+  for (let i = 0; i < 3; i++) {
+    $('.search-results').append(`
+      <div>
+        <a href="#">Result</a>
+      </div>
+    `);
+  }
 }
 
 /* function: takes the user input and display data callbacks to retrieve the JSON data via the JSON Method */
