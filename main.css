@@ -159,6 +159,12 @@ main {
   }
 }
 
+/* Search Results Section Styling */
+
+.search-results-section {
+  margin-top: 10px
+}
+
 /* Main Results Section Styling */
 
 .main-results-section {
