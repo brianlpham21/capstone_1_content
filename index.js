@@ -29,7 +29,7 @@ function watchButton() {
     const query1 = {
       ts: '1',
       hash: 'c516f34ed1b8c272e76721b1be1dfe71',
-      limit: '50'
+      nameStartsWith: 'hu'
     };
 
     $.getJSON(MARVEL_API, query1, displaySearchResults);
