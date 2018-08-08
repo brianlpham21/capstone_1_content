@@ -51,7 +51,6 @@ function cleanUpDescription(description) {
 
 /* the first callback function that displays the information retrieved from the Marvel API */
 
-
 function displayMarvelData(data) {
   if (data.data.results[0] === undefined) {
     $('.unknown-section').html(`

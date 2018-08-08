@@ -181,7 +181,6 @@ main {
   max-width: 800px;
   position: relative;
   top: 100px;
-  display: none;
 }
 
 @media only screen and (min-width: 581px) and (max-width: 830px) {
