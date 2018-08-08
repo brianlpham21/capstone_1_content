@@ -20,6 +20,22 @@ function watchSubmit() {
   });
 }
 
+/* Testing */
+
+function watchButton() {
+  $('button').on('click', function(event) {
+    event.preventDefault();
+
+    for (let i = 0; i < 3; i++) {
+      $('.search-results').append(`
+        <div>
+          <a href="#">Result</a>
+        </div>
+      `);
+    }
+  });
+}
+
 /* function: takes the user input and display data callbacks to retrieve the JSON data via the JSON Method */
 
 function retrieveJSON(searchTerm, callback1, callback2) {
@@ -231,6 +247,7 @@ function addEventListeners() {
   watchLogo();
   watchVideoImageClick();
   watchCloseClick();
+  watchButton();
 }
 
 $(addEventListeners);
