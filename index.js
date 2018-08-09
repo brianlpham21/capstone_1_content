@@ -12,6 +12,12 @@ function watchSubmit() {
     event.preventDefault();
 
     $('.search-results-section').prop('hidden', false);
+    $('.main-results-section').prop('hidden', true);
+    $('.main-events-section').prop('hidden', true);
+    $('.main-comics-section').prop('hidden', true);
+    $('.main-videos-section').prop('hidden', true);
+    $('.main-share-section').prop('hidden', true);
+
     $('.search-results').html(``);
 
     const queryTarget = $(event.currentTarget).find('input');
@@ -49,7 +55,12 @@ function watchResultClick() {
   $(document).on('click', '.result-name', function(event) {
     event.preventDefault();
 
-    alert("hey!");
+    const queryTarget = $(event.currentTarget);
+    const queryTerm = (queryTarget.html());
+
+    $('.search-results-section').prop('hidden', true);
+
+    retrieveJSON(queryTerm, displayMarvelData, displayYouTubeData);
   });
 }
 
