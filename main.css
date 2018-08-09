@@ -391,10 +391,11 @@ main {
 .share-section * {
   display: inline-block;
   vertical-align: middle;
+  text-decoration: none;
 }
 
 .ss-section:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .ss-icon {
@@ -404,6 +405,7 @@ main {
 
 .ss-title {
   padding-top: 22px;
+  color: black;
 }
 
 @media only screen and (min-width: 581px) and (max-width: 830px) {
