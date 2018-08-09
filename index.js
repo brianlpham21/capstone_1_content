@@ -65,7 +65,7 @@ function displaySearchResults(data) {
   }
 }
 
-/* function: watches for user input submit, passing the value to be processed and resetting the input value */
+/* function: watches for user click of a character in search results */
 
 function watchResultClick() {
   $(document).on('click', '.result-name', function(event) {
