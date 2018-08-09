@@ -11,7 +11,6 @@ function watchSubmit() {
   $('form').on('submit', function(event) {
     event.preventDefault();
 
-    $('.search-results-section').prop('hidden', false);
     $('.main-results-section').prop('hidden', true);
     $('.main-events-section').prop('hidden', true);
     $('.main-comics-section').prop('hidden', true);
@@ -40,6 +39,23 @@ function watchSubmit() {
 
 function displaySearchResults(data) {
   const list = data.data.results;
+
+  if (list.length === 0) {
+    $('.unknown-section').html(`
+      <div class='unknown'>
+        <h2>No character found by that name.</h2>
+      </div>
+    `);
+
+    $('.main-unknown-section').prop('hidden', false);
+    $('.search-results-section').prop('hidden', true);
+
+    return;
+  }
+
+  $('.main-unknown-section').prop('hidden', true);
+  $('.search-results-section').prop('hidden', false);
+
   for (let i = 0; i < list.length; i++) {
     $('.search-results').append(`
       <div class="search-result">
