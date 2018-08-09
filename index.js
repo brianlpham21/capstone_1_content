@@ -5,34 +5,78 @@ const MARVEL_COMICS_API = 'https://gateway.marvel.com:443/v1/public/characters/'
 const MARVEL_EVENTS_API = 'https://gateway.marvel.com:443/v1/public/characters/';
 const YOUTUBE_API = 'https://www.googleapis.com/youtube/v3/search';
 
-/* function: watches for user input submit, passing the value to be processed and resetting the input value */
+/* function: takes user input and displays list of possible search results */
 
 function watchSubmit() {
   $('form').on('submit', function(event) {
     event.preventDefault();
 
+    $('.main-results-section').prop('hidden', true);
+    $('.main-events-section').prop('hidden', true);
+    $('.main-comics-section').prop('hidden', true);
+    $('.main-videos-section').prop('hidden', true);
+    $('.main-share-section').prop('hidden', true);
+
+    $('.search-results').html(``);
+
     const queryTarget = $(event.currentTarget).find('input');
     const queryTerm = (queryTarget.val());
 
-    retrieveJSON(queryTerm, displayMarvelData, displayYouTubeData);
+    const query1 = {
+      ts: '1',
+      hash: 'c516f34ed1b8c272e76721b1be1dfe71',
+      nameStartsWith: queryTerm,
+      limit: '6'
+    };
+
+    $.getJSON(MARVEL_API, query1, displaySearchResults);
 
     queryTarget.val("");
   });
 }
 
-/* Testing */
+/* function: displays search results from search input bar */
 
-function watchButton() {
-  $('button').on('click', function(event) {
+function displaySearchResults(data) {
+  const list = data.data.results;
+
+  if (list.length === 0) {
+    $('.unknown-section').html(`
+      <div class='unknown'>
+        <h2>No character found by that name.</h2>
+      </div>
+    `);
+
+    $('.main-unknown-section').prop('hidden', false);
+    $('.search-results-section').prop('hidden', true);
+
+    return;
+  }
+
+  $('.main-unknown-section').prop('hidden', true);
+  $('.search-results-section').prop('hidden', false);
+
+  for (let i = 0; i < list.length; i++) {
+    $('.search-results').append(`
+      <div class="search-result">
+        <a href="#" class="result-name">${list[i].name}</a>
+      </div>
+    `);
+  }
+}
+
+/* function: watches for user click of a character in search results */
+
+function watchResultClick() {
+  $(document).on('click', '.result-name', function(event) {
     event.preventDefault();
 
-    for (let i = 0; i < 3; i++) {
-      $('.search-results').append(`
-        <div>
-          <a href="#">Result</a>
-        </div>
-      `);
-    }
+    const queryTarget = $(event.currentTarget);
+    const queryTerm = (queryTarget.html());
+
+    $('.search-results-section').prop('hidden', true);
+
+    retrieveJSON(queryTerm, displayMarvelData, displayYouTubeData);
   });
 }
 
@@ -244,10 +288,10 @@ function watchCloseClick() {
 
 function addEventListeners() {
   watchSubmit();
+  watchResultClick();
   watchLogo();
   watchVideoImageClick();
   watchCloseClick();
-  watchButton();
 }
 
 $(addEventListeners);

@@ -165,7 +165,7 @@ main {
   background-color: white;
   border-radius: 30px 30px 0 0;
   font-size: 35px;
-  padding: 30px 40px 0 40px;
+  padding: 30px 60px 0 60px;
   text-decoration: underline;
 }
 
@@ -173,27 +173,54 @@ main {
   background-color: white;
   border-radius: 0 0 30px 30px;
   font-size: 30px;
-  padding: 30px 40px;
+  padding: 20px 60px 30px 60px;
 }
 
 .search-results-section {
   margin: auto;
   max-width: 800px;
   position: relative;
-  top: 100px;
+  top: 120px;
+}
+
+.search-result {
+  margin: 10px 0;
+}
+
+.result-name {
+  color: #cd1d25;
+  text-decoration: none;
+}
+
+.result-name:hover {
+  opacity: 0.6;
 }
 
 @media only screen and (min-width: 581px) and (max-width: 830px) {
   .search-results-section {
     position: static;
-    margin-top: 10px;
+    margin: 20px;
   }
 }
 
 @media only screen and (max-width: 580px) {
   .search-results-section {
     position: static;
-    margin-top: 10px;
+    margin: 15px;
+  }
+
+  .search-results-title {
+    font-size: 30px;
+    padding: 30px 30px 0 30px;
+  }
+
+  .search-results {
+    font-size: 23px;
+    padding: 10px 30px 30px 30px;
+  }
+
+  .search-result {
+    margin: 16px 0;
   }
 }
 
@@ -364,10 +391,11 @@ main {
 .share-section * {
   display: inline-block;
   vertical-align: middle;
+  text-decoration: none;
 }
 
 .ss-section:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .ss-icon {
@@ -377,6 +405,7 @@ main {
 
 .ss-title {
   padding-top: 22px;
+  color: black;
 }
 
 @media only screen and (min-width: 581px) and (max-width: 830px) {
