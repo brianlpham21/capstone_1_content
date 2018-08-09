@@ -130,8 +130,8 @@ function displayMarvelData(data) {
   else {
     if (data.data.results[0].description === '') {
       $('.results-section').html(`
-        <img src='${cleanUpLink(data.data.results[0].thumbnail.path + '.' + data.data.results[0].thumbnail.extension)}' class='character-photo' alt='character-photo'>
         <div class='results-text'>
+          <img src='${cleanUpLink(data.data.results[0].thumbnail.path + '.' + data.data.results[0].thumbnail.extension)}' class='character-photo' alt='character-photo'>
           <h2 class='character-name'>${data.data.results[0].name}</h2>
           <hr>
           <p class='character-description'>No Description Available.</p>

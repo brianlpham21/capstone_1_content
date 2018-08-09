@@ -227,18 +227,17 @@ main {
 /* Main Results Section Styling */
 
 .main-results-section {
-  height: 350px;
+  height: 100%;
+  overflow: hidden;
 }
 
 .character-photo {
   border: 5px solid dimGray;
   border-radius: 3px;
   float: left;
+  margin-right: 30px;
+  position: relative;
   width: 300px;
-}
-
-.results-text {
-  padding-left: 325px;
 }
 
 .character-name {
