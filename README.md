@@ -5,7 +5,15 @@ Marvel Character Search allows users to access information about key Marvel char
 
 Users will use Marvel Character Search to visit a site that will collectively provide all the information available on the official Marvel and Youtube websites regarding their characters.
 
-[Screenshots](https://gist.github.com/brianlpham21/76eeee95c2730ea8da9512aaef1161cb)
+## Screenshots
+
+Desktop
+
+![alt text](/screen_shots/screen-shot-desktop.png "Desktop Screenshot")
+
+Mobile
+
+![alt text](/screen_shots/screen-shot-mobile.png "Mobile Screenshot")
 
 ## UX
 
