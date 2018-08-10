@@ -13,7 +13,7 @@ Desktop
 
 Mobile
 
-<img src="/screen_shots/screen-shot-mobile.png" width="100">
+<img src="/screen_shots/screen-shot-mobile.png" width="50%">
 
 ## UX
 
