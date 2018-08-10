@@ -13,7 +13,7 @@ Desktop
 
 Mobile
 
-![alt text](/screen_shots/screen-shot-mobile.png "Mobile Screenshot")
+![alt text](/screen_shots/screen-shot-mobile.png "Mobile Screenshot" | width=100)
 
 ## UX
 
