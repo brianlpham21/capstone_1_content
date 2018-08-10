@@ -13,7 +13,7 @@ Desktop
 
 Mobile
 
-![](/screen_shots/screen-shot-mobile.png | width=100)
+![](/screen_shots/screen-shot-mobile.png =100x20)
 
 ## UX
 
